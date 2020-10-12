@@ -1,0 +1,73 @@
+<DrawerScreen>:
+    NavigationLayout:
+        ScreenManager:
+            Screen:
+                id:Main_screen
+                BoxLayout:
+                    orientation:'vertical'
+                    MDToolbar:
+                        id:main_toolbar
+                        title:'Home'
+                        elevation:10
+                        left_action_items:[['menu',lambda x : nav_drawer.toggle_nav_drawer()]]
+                    
+                    Widget:    
+                    
+            Screen:
+                id:Profile_screen
+                BoxLayout:
+                    orientation:'vertical'
+                    MDLabel:
+                        text:'Profile'
+        MDNavigationDrawer:
+            id:nav_drawer
+            ContentDrawer:
+                id:Content_drawer
+<ContentDrawer>:
+    orientation:'vertical'
+    padding:"8dp"
+    spacing:"8dp"
+    
+    AnchorLayout:
+        id:Anchor_layout
+        anchor_x: "left"
+        size_hint_y : None
+        height:user_image.height
+        Image:
+            id:user_image
+            size_hint:1,None
+            source:"/media/xerxes/New Volume/New folder/amer fort/IMG_0044.JPG"
+            
+    MDLabel:
+        id:user_name
+        text:"Himanshu somani"
+        font_style:"Button"
+        size_hint_y:None
+        height:self.texture_size[1]
+        
+    ScrollView:
+        DrawerList:
+            id:md_list
+            OneLineListItem:
+                text:'Profile'
+                on_press:
+                    md_list.Profile()
+                
+            OneLineListItem:
+                text:'Schemes'
+                on_press:
+                    md_list.Schemes()
+                
+            OneLineListItem:
+                text:'Applied Jobs'
+                on_press:
+                    md_list.Applied_jobs()
+                
+            OneLineListItem:
+                text:'Feedback'
+                on_press:
+                    md_list.Feedback()
+            OneLineListItem:
+                text:'Settings'
+                on_press:
+                    md_list.Settings()
