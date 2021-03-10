@@ -1,0 +1,69 @@
+MDFloatLayout:
+    MDTextField:
+        id:Company_name
+        hint_text:"Company Name"
+        required:True
+        helper_text_mode:"on_error"
+        helper_text:"Enter company name"
+        pos_hint:{'x':.3,'y':.6}
+        size_hint:.4,None
+        
+    MDTextField:
+        id:user_name
+        hint_text:"UserName"
+        icon_right:"gender-male-female"
+        required:True
+        helper_text_mode:"on_error"
+        helper_text:"Username name(consist@,_,1,2..or /)"
+        pos_hint:{'x':.3,'y':.5}
+        size_hint:.4,None
+        
+    MDTextField:
+        id:name
+        
+        hint_text:"Name"
+        required:True
+        helper_text_mode:"on_error"
+        helper_text:"Enter name"
+        pos_hint:{'x':.3,'y':.4}
+        size_hint:.4,None
+        
+    MDTextField:
+        id:email
+        hint_text:"Email"
+        icon_right:"mail"
+        required:True
+        helper_text_mode:"on_error"
+        helper_text:"Enter name"
+        pos_hint:{'x':.3,'y':.3}
+        size_hint:.4,None
+        
+    MDTextField:
+        id:password
+        icon_right:"key"
+        hint_text:"Password"
+        password:True
+        required:True
+        helper_text_mode:"on_error"
+        helper_text:"Password must have Capital letter,number,@,_,&..."
+        pos_hint:{'x':.3,'y':.2}
+        size_hint:.4,None
+        
+    MDTextField:
+        id:cnfrm_password
+        icon_right:"key"
+        hint_text:"Conferm Password"
+        password:True
+        required:True
+        helper_text_mode:"on_error"
+        helper_text:"Password must match"
+        pos_hint:{'x':.3,'y':.1}
+        size_hint:.4,None
+        
+    MDRaisedButton:
+        text: "Register"
+        md_bg_color: .2, .4, .7, 1
+        pos_hint:{'x':.4,'y':.03}
+        size_hint:.2,None
+        
+    

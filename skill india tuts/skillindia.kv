@@ -1,0 +1,214 @@
+<ScrManager>:
+	LoginScreen:
+		name:'login'
+	MainScreen:
+		name:'mainn'
+	Nsdc:
+		name:'nsdc'
+	NsdcTrain:
+		name:'nsdctrain'
+<LoginScreen>:
+	id:login
+	name:'login'
+	username:username
+	password:create_pass
+	cnfrm_pass:cnfrm_pass
+	email:email
+	phonno:phonnumber
+	accnt_name:Name
+	BoxLayout:
+		FloatLayout:
+			Image:
+				source:'/storage/emulated/0/Download/images.png'
+				pos_hint:{'x':.2 , 'y': .70}
+				size_hint:(.6,.35)
+				allow_stretch:True
+			MDTextField:
+				id:username
+    			hint_text: "Username"
+    			required: True
+    			helper_text_mode: "on_error"
+    			helper_text: "Enter Username "
+    			helper_text_mode:"on_focus"
+    			size_hint:(.6,.08)
+				pos_hint:{'x':.2,'y':.66}
+			
+			MDTextField:
+				id:Name
+    			hint_text: "name"
+    			required: True
+    			helper_text_mode: "on_error"
+    			helper_text: "Enter name "
+    			size_hint:(.6,.08)
+				pos_hint:{'x':.2,'y':.58}
+			
+			MDTextField:
+				id:email
+    			hint_text: "Email"
+    			required: True
+    			helper_text_mode: "on_error"
+    			helper_text: "Enter email "
+    			helper_text_mode:'on_focus'
+    			size_hint:(.6 ,.08)
+				pos_hint:{'x':.2 ,'y':.5}
+			
+			MDTextField:
+				id:phonnumber
+    			hint_text: "Phone no."
+    			required: True
+    			helper_text_mode: "on_error"
+    			helper_text: "Enter phone no."
+    			helper_text_mode:'on_focus'
+    			size_hint:(.6,.08)
+				pos_hint:{'x':.2,'y':.42}
+			
+			MDTextField:
+				id:create_pass
+    			hint_text: "Create password"
+    			required: True
+    			helper_text_mode: "on_error"
+    			helper_text: "Enter password "
+    			helper_text_mode:'on_focus'
+    			size_hint:(.6,.08)
+				pos_hint:{'x':.2,'y':.34}
+			
+			MDTextField:
+				id:cnfrm_pass
+    			hint_text: "Confirm password"
+    			required: True
+    			helper_text_mode: "on_error"
+    			helper_text: "Enter password "	
+    			helper_text_mode:'on_focus'
+    			size_hint:(.6,.08)
+				pos_hint:{'x':.2,'y':.26}
+				
+			MDIconButton:
+				id :  sign_up_btn
+				icon:"/storage/emulated/0/Download/24804-7-sign-up-button-transparent-background.png"
+				pos_hint:{'x':.3,'y':.15}
+				size_hint:(.4,.08)
+				on_press:
+					app.root.current= root.check()
+			
+			MDIconButton:
+				id :  sign_up_btn
+				icon:"/storage/emulated/0/Download/24804-7-sign-up-button-transparent-background.png"
+				pos_hint:{'x':.3,'y':.05}
+				size_hint:(.4,.08)
+				on_press:
+					app.root.current= root.login()
+
+
+<MainScreen>:
+	name:'mainn'
+	BoxLayout:
+		orientation:'vertical'
+		MDToolbar:
+			title:'Skill India Mission'
+			halign:'center'
+		FloatLayout
+			MDIconButton:
+				icon:"/storage/emulated/0/Download/Nsdc.png"
+				pos_hint:{'x':.05,'y':.75}
+				size_hint:(.4,.15)
+				on_press:
+					app.root.current=root.nsdc()
+				
+			MDIconButton:
+				icon:"/storage/emulated/0/Download/nsda-logo.png"
+				pos_hint:{'x':.55,'y':.75}
+				size_hint:(.4,.15)
+				
+			MDIconButton:
+				icon:"/storage/emulated/0/Download/Pmky.png"
+				pos_hint:{'x':.05,'y':.5}
+				size_hint:(.4,.15)
+				
+			MDIconButton:
+				icon:"/storage/emulated/0/Download/nsrd-icon.jpg"
+				pos_hint:{'x':.55,'y':.5}
+				size_hint:(.4,.15)
+				
+			MDIconButton:
+				icon:"/storage/emulated/0/Download/lmis-icon.jpg"
+				pos_hint:{'x':.05,'y':.25}
+				size_hint:(.4,.15)
+				
+			MDIconButton:
+				icon:"/storage/emulated/0/Download/nsqf-icon.jpg"
+				pos_hint:{'x':.55,'y':.25}
+				size_hint:(.4,.15)
+				
+	
+				
+				
+<Nsdc>:
+	name:'nsdc'
+	FloatLayout:
+		BoxLayout:
+			orientation:'vertical'
+			pos_hint:{'x':.02,'y':.7}
+			size_hint:(.96,.3)
+			Carousel:
+				direction: 'right'
+				loop:True
+    			AsyncImage:
+        			source:  'https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRePubzuYOSbfEOQLVNF1ilJJcL6VSZ0WxA9dnnuVTcKsqagqo3&usqp=CAU'
+        		
+    			AsyncImage:
+        			source: 'https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcS0-MXCblVBTgWIcrc6ScS7cP6pFucBZHXTrWWETBzHIb5eucCu&usqp=CAU'
+    			AsyncImage:
+        			source:  'https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcS_5-8wnjBNKYjCP9D-NHJN81oWdd8Z3Y8LydGqhed1Lg7WHCON&usqp=CAU'
+        		AsyncImage:
+        			source:  'https://nsdcindia.org/sites/default/files/womens-day-banner.png'
+        		AsyncImage:
+        			source:' https://nsdcindia.org/sites/default/files/congratulations-skill-champions.jpg' 
+        BoxLayout:
+        	orientation:'vertical'
+        	size_hint:(.96,.6)
+        	pos_hint:{'x':.02,'y':.02}
+        	ScrollView:
+        		do_scroll_x:False
+        		MDList:
+        			id:container
+        			MDFlatButton:
+        				text:'Funding'
+        			MDFlatButton:
+        				text:'NSDC Training center'
+        				on_press:
+        					app.root.current=root.go()
+        			MDFlatButton:
+        				text:'Industry Partnership'
+        			MDFlatButton:
+        				text:'Standards and Quality Assurance'
+        				
+        				
+        			
+<NsdcTrain>:
+	name:'nsdctrain'
+	FloatLayout:
+		MDTextFieldRound:
+			id:searchfield
+			hint_text:'Search here'
+			size_hint:.8,.08
+			pos_hint:{'x':.1,'y':.9}
+			icon_right:'magnify'
+			color_active:1,1,1,1
+			on_text_validate:
+				root.searche()
+			
+			
+		BoxLayout:
+			id:btnlayout
+			orientation:'vertical'
+			size_hint:.8,.8
+			pos_hint:{'x':.1,'y':root.lenth}
+			ScrollView:
+				do_scroll_x:False
+				MDList:
+					id:mm
+        			
+        	
+        
+		
+			

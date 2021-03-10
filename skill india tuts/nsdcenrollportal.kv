@@ -1,0 +1,29 @@
+<NsdcEnrollPortal>:
+    id:Nsdc_Enroll_Portal
+    name:"NSDC_Enroll_Portal"
+    
+    FloatLayout:
+        size_hint:1,.9
+        pos_hint:{'x':.01,'y':0}
+        BoxLayout:
+            
+            pos_hint:{'x':.02,'y':0}
+            size_hint:1,1
+            orientation:'vertical'
+            AsyncImage:
+                source:"https://partnerships.nsdcindia.org/resources/images/logo.png"
+                
+            MDLabel:
+                
+                text_size:self.texture_size
+                text:"National Skill Development Corporation (NSDC) encourages private sector participation to help in fueling and energizing the skill ecosystem.  It invites proposals from private enterprises / corporates / NGOs among others to partner with NSDC and support skill development of the country's youth, leading to sustainable employment."
+            MDLabel:
+                
+                text_size:self.texture_size
+                text:"This portal provisions Proposal Submission for funding/non-funding affiliation with NSDC.  It also lets the proposer keep a track of the progress of the proposal.  Further, the platform offers a single window for post-approval-tracking of the agreement execution, first disbursement, and allows approved partners to send requisitions for subsequent disbursements."
+
+            MDRaisedButton:
+                text:"Enroll Now"
+                on_press:
+                    print("Portal pressed")
+                    Nsdc_Enroll_Portal.open_portal()

@@ -1,0 +1,177 @@
+<DrawerScreen>:
+    id : drawer_screen
+    name:"DrawerScreen"
+    screen_manager:screen_manager
+    MDToolbar:
+        id:main_toolbar
+        pos_hint : {"top": 1}
+        title:'Home'
+        elevation:10
+        left_action_items:[['menu',lambda x : nav_drawer.toggle_nav_drawer()]]
+        right_action_items:[['account',lambda x : drawer_screen.account(drawer_screen.screen_manager)],['arrow-left',lambda x : print()]]
+        size_hint:1,.1
+        
+    NavigationLayout:
+        
+        ScreenManager:
+            id:screen_manager
+            
+            Screen:
+                name : "Home"
+                id:Home    
+                BoxLayout:
+                    size_hint:1,.9
+                    orientation:'vertical'
+                    
+                    MDTabs:
+                        id:Tabs
+                        on_tab_switch:app.on_tab_switch(*args)
+                    
+                                            
+                    
+            Profile:
+                id:Profile_screen
+                
+                        
+            Schemes:
+                id:Schemes
+                scheme_screen_manager:screen_manager
+                
+                        
+            AppliedJobs:
+                id: Applied_Jobs
+                
+                        
+            Feedback:
+                id:Feedback
+                
+                        
+            UserSettings:
+                id:UserSettings
+                
+            Nsdc:
+                id:Nsdc
+                scheme_screen_manager:screen_manager
+                
+            Pmkvy:
+                id:Pmkvy
+                scheme_screen_manager:screen_manager
+            
+            NsdcEnrollPortal:
+                id:NSDC_Enroll_Portel
+            
+            Signup:
+                id:Signup
+                name:'Signup'
+                screen_manager:screen_manager
+                        
+            Userregi:
+                id:register
+                name:'register'            
+                screen_manager:screen_manager
+                main_toolbar:main_toolbar
+        MDNavigationDrawer:
+            id:nav_drawer
+            ContentDrawer:
+                id:Content_drawer
+                screen_manager:screen_manager
+                nav_drawer:nav_drawer
+                main_toolbar:main_toolbar
+<ContentDrawer>:
+    orientation:'vertical'
+    padding:"8dp"
+    spacing:"8dp"
+    id:Content_drawer
+    
+    
+    AnchorLayout:
+        id:Anchor_layout
+        anchor_x: "left"
+        size_hint_y : None
+        height:user_image.height
+        Image:
+            id:user_image
+            size_hint:1,None
+            source:"/media/xerxes/New Volume/New folder/amer fort/IMG_0044.JPG"
+            
+    MDLabel:
+        id:user_name
+        text:"Himanshu somani"
+        font_style:"Button"
+        size_hint_y:None
+        height:self.texture_size[1]
+        
+    ScrollView:
+        DrawerList:
+            id:md_list
+            OneLineListItem:
+                text:'Profile'
+                on_press:
+                    Content_drawer.main_toolbar.title="Profile"
+                    Content_drawer.nav_drawer.set_state("close")
+                    Content_drawer.screen_manager.current=md_list.Profile()
+                    
+                
+            OneLineListItem:
+                text:'Schemes'
+                on_press:
+                    Content_drawer.main_toolbar.title="Schemes"
+                    Content_drawer.nav_drawer.set_state("close")
+                    Content_drawer.screen_manager.current=md_list.Schemes()
+                
+            OneLineListItem:
+                text:'Applied Jobs'
+                on_press:
+                    Content_drawer.main_toolbar.title="Applied Jobs"
+                    Content_drawer.nav_drawer.set_state("close")
+                    Content_drawer.screen_manager.current=md_list.Applied_jobs()
+                
+            OneLineListItem:
+                text:'Feedback'
+                on_press:
+                    Content_drawer.main_toolbar.title="Feedback"
+                    Content_drawer.nav_drawer.set_state("close")
+                    Content_drawer.screen_manager.current=md_list.Feedback()
+            OneLineListItem:
+                text:'Settings'
+                on_press:
+                    Content_drawer.main_toolbar.title="Settings"
+                    Content_drawer.nav_drawer.set_state("close")
+                    Content_drawer.screen_manager.current=md_list.Settings()
+                    
+            
+<Signup>:
+    screen_manager:
+<Profile>:
+<Schemes>:
+    scheme_screen_manager:
+<UserSettings>:
+<Feedback>:
+<AppliedJobs>:
+<Nsdc>:
+    scheme_screen_manager:
+    
+<Pmkvy>:
+    scheme_screen_manager:    
+<NsdcEnrollPortal>:            
+<Tab>:
+    id:Tab
+    MDBoxLayout:
+        size_hint:1,.3
+        pos_hint:{'x':0,'y':.7}
+        AsyncImage:
+            id:Tab_image
+            size_hint:.4,1
+            pos_hint:{'x':.35,'y':0}
+            source:'https://upload.wikimedia.org/wikipedia/en/3/3e/Skill_India.png'
+        
+    MDBoxLayout:
+        size_hint:1,.7
+        pos_hint:{'x':0,'y':0}
+        MDLabel:
+            id:Tab_description
+            size_hint:1,1
+            text:'Skill India is an initiative launched by the Government in 2015 to train over 40 crore Indians in different industry-related jobs. The vision is to create an empowered workforce by 2022 with the help of various schemes and training courses. Part of the Skill India mission is to cater to skill development in India through a result-oriented framework that corresponds with the needs of the industry. Further, Skill India registration involves a straightforward online procedure and allows you to enrol yourself either as a trainer or a candidate.'
+<Userregi>:
+    screen_manager:
+    main_toolbar:

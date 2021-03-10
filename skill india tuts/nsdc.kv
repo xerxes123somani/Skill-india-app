@@ -1,0 +1,120 @@
+<Nsdc>:
+    id:Nsdc
+    name:"NSDC"
+    scheme_screen_manager:
+    BoxLayout:
+        size_hint:1,.9
+        
+        FloatLayout:
+    		BoxLayout:
+    			orientation:'vertical'
+    			pos_hint:{'x':.02,'y':.7}
+    			size_hint:(.96,.3)
+    			Carousel:
+    				direction: 'right'
+    				loop:True
+        			AsyncImage:
+            			source:  'https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRePubzuYOSbfEOQLVNF1ilJJcL6VSZ0WxA9dnnuVTcKsqagqo3&usqp=CAU'
+            		
+        			AsyncImage:
+            			source: 'https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcS0-MXCblVBTgWIcrc6ScS7cP6pFucBZHXTrWWETBzHIb5eucCu&usqp=CAU'
+        			AsyncImage:
+            			source:  'https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcS_5-8wnjBNKYjCP9D-NHJN81oWdd8Z3Y8LydGqhed1Lg7WHCON&usqp=CAU'
+            		AsyncImage:
+            			source:  'https://nsdcindia.org/sites/default/files/womens-day-banner.png'
+            		AsyncImage:
+            			source:' https://nsdcindia.org/sites/default/files/congratulations-skill-champions.jpg' 
+            BoxLayout:
+            	orientation:'vertical'
+            	size_hint:(.96,.6)
+            	pos_hint:{'x':.02,'y':.02}
+            	ScrollView:
+            		do_scroll_x:False
+            		MDList:
+            			id:container
+            			MDFlatButton:
+            				text:'Funding'
+            				on_press:
+                				Nsdc.scheme_screen_manager.current=Nsdc.Funding()
+            			MDFlatButton:
+            				text:'Find NSDC Training center'
+            				on_press:
+                				print("Train center")
+                				Nsdc.scheme_screen_manager.current=Nsdc.Find_NSDC_training_center()
+            			MDFlatButton:
+            				text:'Industry Partnership'
+            				on_press:
+                				Nsdc.scheme_screen_manager.current=Nsdc.Industry_partnership()
+            			MDFlatButton:
+            				text:'Standards and Quality Assurance'
+            				on_press:
+                				Nsdc.scheme_screen_manager.current=Nsdc.Find_NSDC_training_center()
+            			MDFlatButton:
+                			text:'Enroll for NSDC training partners'
+                			on_press:
+                    			print("Enroll pressed kv file")
+                    			Nsdc.scheme_screen_manager.current=Nsdc.NSDC_Enroll_Portal()
+
+<Pmkvy>:
+    id:Pmkvy
+    name:"PMKVY"
+    scheme_screen_manager:
+    MDCard:
+        orientation:'vertical'
+        size_hint:1,.9
+        ScrollView:
+            do_scroll_x:False
+            MDList:
+                AsyncImage:
+                    size_hint_x:.9
+                    size_hint_y:None
+                    source:"http://pmkvyofficial.org/images/logo.png"
+                Carousel:
+                    size_hint_x:.9
+                    size_hint_y:None
+                    direction:'right'
+                    loop:True
+                    AsyncImage:
+                        source:'http://pmkvyofficial.org/images/GKRA-Social1.jpg'
+                    AsyncImage:
+                        source:'http://pmkvyofficial.org/images/skill-reskill-web-banner.png'
+                    AsyncImage:
+                        source:'http://pmkvyofficial.org/images/mapping-demand-and-supply-pmkvy.jpg'                
+
+                MDCard:
+                    orientation:'vertical'
+                    padding:"8dp"
+                    size_hint_y:None
+                    ScrollView:
+                        do_scroll_x:False
+                        MDList:
+                            MDLabel:
+                                text:'What is PMKVY?'
+                                size_hint_y:None
+                                height:self.texture_size[1]
+                            
+                            MDLabel:
+                                size_hint_y:None
+                                height:self.texture_size[1]
+                                text:'Pradhan Mantri Kaushal Vikas Yojana (PMKVY) is the flagship scheme of the Ministry of Skill Development & Entrepreneurship (MSDE) implemented by National Skill Development Corporation. The objective of this Skill Certification Scheme is to enable a large number of Indian youth to take up industry-relevant skill training that will help them in securing a better livelihood. Individuals with prior learning experience or skills will also be assessed and certified under Recognition of Prior Learning (RPL).'
+                MDLabel:
+                    size_hint_y:None
+                    text:"KEY COMPONENTS OF SCHEME"
+                    font_style:'H5'
+                        
+                AsyncImage:
+                    size_hint_x:.9
+                    size_hint_y:None
+                    source:'https://pursuite-production.s3.amazonaws.com/media/cms_page_media/2234/Keycomponent.png'
+                
+                MDLabel:
+                    size_hint_y:None
+                    text:'For more information visit :'           
+                    
+                MDFlatButton:
+                    size_hint_y:None
+                    text:'http://pmkvyofficial.org/'
+                    on_release:
+                        Pmkvy.visit_pmkvy()
+                                  			
+<NsdcEnrollPortal>:	

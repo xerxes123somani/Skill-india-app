@@ -1,0 +1,34 @@
+<Profile>:
+    id:Profile_screen
+    name:"Profile"
+    BoxLayout:
+        orientation:'vertical'
+        
+    
+        
+        BoxLayout:
+            size_hint:1,.7
+            orientation:'vertical'
+            MDLabel:
+            MDIconButton:
+                icon:'human-male'
+                size_hint:.5,1
+                
+            MDFloatingActionButton:
+                icon:'plus'
+                pos_hint:{'x':.8,'y':.2}
+                elevation_normal:10
+        ScrollView:
+            MDList:
+                OneLineListItem:
+                    id:email_profile
+                    text:'User Email'
+                        
+                OneLineListItem:
+                    id:User_name_profile
+                    text:'User name'
+                        
+                OneLineListItem:
+                    id:User_mobile_profile
+                    text:'Mobile No.'
+                    

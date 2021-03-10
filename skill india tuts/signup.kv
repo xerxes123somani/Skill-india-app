@@ -1,0 +1,42 @@
+<MyButton@MDRectangleFlatButton>:
+    text_color:1, 1, 1, 1
+    md_bg_color: 0,.4,.3,1
+<Signup>:
+    id:Signup
+    name:'Signup'
+    screen_manager:
+    MDFloatLayout:
+        size_hint:1,1
+        md_bg_color:.3,.4,.5,1
+        MDIconButton:
+            icon:'arrow-left'
+            pos_hint:{'x':.1,'y':.9}
+            on_release:
+                Signup.on_back_press(Signup.screen_manager)
+            
+        MDLabel:
+            text_size:self.texture_size
+            text:'Signup As'
+            size_hint:.33,.4
+            font_style:'H4'
+            pos_hint:{'x':.4,'y':.58}
+        MyButton:
+            size_hint:.4,.1
+            pos_hint:{'x':.3,'y':.55}
+            text:'Training Partner'
+        MyButton:
+            size_hint:.4,.1
+            pos_hint:{'x':.3,'y':.4}
+            text:'Candidate'
+            on_release:
+                Signup.screen_manager.current=Signup.user_registerpage()
+    
+            
+        MDTextButton:
+            text:"Already Signup"
+            size_hint:.3,.1
+            custom_color: 0, 1, 0, 1
+            pos_hint:{'x':.35,'y':.3}
+            on_release:
+                Signup.screen_manager.current=Signup.Already_signup()
+        
